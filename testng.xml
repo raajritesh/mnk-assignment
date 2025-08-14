@@ -4,6 +4,7 @@
         <classes>
             <class name="LoginTest"/>
             <class name="AddToCart"/>
+            <class name="RemoveFromCart"/>
         </classes>
     </test>
 </suite>
