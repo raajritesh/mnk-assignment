@@ -8,7 +8,8 @@ public class CartPage extends BasePage {
 
     private By cartIcon = By.className("shopping_cart_link");
     private By cartItemName = By.className("inventory_item_name");
-
+    private By removeFromCart = By.id("remove-sauce-labs-backpack");
+    
     public CartPage(WebDriver driver) {
         super(driver);
     }
@@ -19,5 +20,9 @@ public class CartPage extends BasePage {
 
     public String getCartItemName() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(cartItemName)).getText();
+    }
+    
+    public void removeItemFromCart() {
+    	wait.until(ExpectedConditions.elementToBeClickable(removeFromCart)).click();
     }
 }

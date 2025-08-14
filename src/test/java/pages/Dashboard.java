@@ -10,7 +10,9 @@ public class Dashboard extends BasePage {
     private By firstAddToCartBtn = By.id("add-to-cart-sauce-labs-backpack");
     private By firstItemName = By.id("shopping_cart_container");
    // private By firstItemName = By.xpath("//div[contains(text(), 'Sauce Labs Backpack')]");
-
+    private By secondAddToCartBtn = By.name("add-to-cart-sauce-labs-bike-light");
+    private By secondItemName = By.xpath("//div[contains(text(),'Sauce Labs Bike Light')]");		
+    		
     public Dashboard(WebDriver driver) {
         super(driver);
     }
@@ -25,5 +27,13 @@ public class Dashboard extends BasePage {
 
     public void addFirstItemToCart() {
         wait.until(ExpectedConditions.elementToBeClickable(firstAddToCartBtn)).click();
+    }  
+    
+    public String getSecondItemName() {
+    	return wait.until(ExpectedConditions.visibilityOfElementLocated(secondItemName)).getText();
     }
+    public void addSecondItemToCart() {
+    	wait.until(ExpectedConditions.elementToBeClickable(secondAddToCartBtn)).click();
+    }
+        
 }
